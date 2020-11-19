@@ -24,7 +24,9 @@ class _DetailPageState extends State<DetailPage> {
 
   Widget _buildBody() {
     return Padding(padding: EdgeInsets.all(8.0),
+      child: Text('00'),
     );
   }
-}
 
+
+  //날짜 확장성

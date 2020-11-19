@@ -13,7 +13,7 @@ class _ListPageState extends State<ListPage> {
       appBar: AppBar(
         title: Text(
           'ToDo List',
-          style: TextStyle(color:  Colors.blue, fontWeight: FontWeight.bold),
+          style: TextStyle(color:  Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
       body: _buildBody(),
@@ -22,6 +22,18 @@ class _ListPageState extends State<ListPage> {
 
   Widget _buildBody() {
     return Padding(padding: EdgeInsets.all(8.0),
+     //child: Text('testttttt'),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListTile(
+          leading: new Checkbox(
+              value: true,
+              onChanged: (bool value) {},
+          ),
+          title: Text("일정1"),
+          subtitle: Text("세부내용"),
+        ),
+      )
      // child: ListView,
     );
   }
