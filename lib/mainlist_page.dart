@@ -7,6 +7,8 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
+  bool _ifClick = false;
+  // 변경 가능한 상태는 항상 여기
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,14 +23,19 @@ class _ListPageState extends State<ListPage> {
   }
 
   Widget _buildBody() {
+
     return Padding(padding: EdgeInsets.all(8.0),
      //child: Text('testttttt'),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListTile(
           leading: new Checkbox(
-              value: true,
-              onChanged: (bool value) {},
+              value: _ifClick, //true, //false
+            onChanged: (bool value) {
+              setState(() {
+                _ifClick = value;
+              });
+            },
           ),
           title: Text("일정1"),
           subtitle: Text("세부내용"),
